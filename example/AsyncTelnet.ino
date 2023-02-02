@@ -7,7 +7,7 @@ void setup() {
   WiFi.disconnect(true, true);
   delay(200);
   WiFi.mode(WIFI_STA);
-  WiFi.begin("Hoffmann","7!house8");
+  WiFi.begin("ssid","password");
   if (WiFi.waitForConnectResult() != WL_CONNECTED) return;
   WiFi.setAutoReconnect(true);
 
