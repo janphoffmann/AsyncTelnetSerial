@@ -17,14 +17,23 @@ Being an Async library everything is done in callbacks, there is no need to call
 - AsyncTelnet    - https://github.com/janphoffmann/AsyncTelnet
 
 # usage
-- include the library ->#include "AsyncTelnetSerial.h"
-- create an instance  ->AsyncTelnetSerial TestInstance(&Serial); // <- link the HardwareSerial eg Serial or Serial1
-- declare the callbackfunctions if need any
-- in Setup() function 
-- - setup your WiFi as usual,
-- - then attatch the callback functions to the declared instance
-- - then call the begin() function -> TestInstance.begin(baudrate, LinkTelnetToSerial, enableMDNS); 
-- - - // default baudrate = 115200, default LinkTelnetToSerial = true, default mDNS = false!
+```
+// include the library
+#include "AsyncTelnetSerial.h"
+
+//create an instance
+AsyncTelnetSerial TestInstance(&Serial); // <- link the HardwareSerial eg Serial or Serial1
+
+//declare the callbackfunctions if need any
+
+
+// in Setup() function
+void setup(){
+  //setup your WiFi as usual,
+  //then attatch the callback functions to the declared instance
+  //then call the begin() function ->
+  TestInstance.begin(baudrate, LinkTelnetToSerial, enableMDNS); // default baudrate = 115200, default LinkTelnetToSerial = true, default mDNS = false!
+```
 Thats it.
 
 To test this, you can use TeraTerm and connect to esp32.local over Telnet at port 23, open the serial monitor in the arduino IDE.
